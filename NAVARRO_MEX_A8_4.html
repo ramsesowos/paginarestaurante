@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicación - BurgerPizza Hut</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        section {
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body background="file:///C:/Users/Ramses/OneDrive/Im%C3%A1genes/%C3%81lbum%20de%20c%C3%A1mara/dominos-pizza.jpg">
+   
+<header>
+       <p><font size=5</font></p>
+ <h1>Ubicación - BurgerPizza Hut</h1>
+<a href="index.html">Volver a la página de inicio</a>
+    </header>
+    <section>
+        <h2>Encuéntranos aquí</h2>
+        <p>Nos ubicamos en:Merida Yucatan</p>
+        <p>Calle Principal, Ciudad, País</p>
+        <div id="map"></div>
+    </section>
+
+    <!-- Script para cargar Google Maps -->
+    <script>
+        function initMap() {
+            // Coordenadas del restaurante
+            var restaurante = {lat: 40.712776, lng: -74.005974};
+            // Crear un mapa centrado en las coordenadas del restaurante
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: restaurante
+            });
+            // Marcar el restaurante en el mapa
+            var marker = new google.maps.Marker({
+                position: restaurante,
+                map: map
+            });
+        }
+    </script>
+    <!-- Cargar la API de Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>
